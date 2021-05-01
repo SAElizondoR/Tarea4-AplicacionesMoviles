@@ -4,4 +4,3 @@ export interface Cita {
     image: string;
     characterDirection: string;
   }
-  

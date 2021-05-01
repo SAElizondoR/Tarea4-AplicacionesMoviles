@@ -23,8 +23,3 @@ export class Tab2Page {
     this.listaCitas = await respuesta.json();
   }
 }
-
-
-
-
-
