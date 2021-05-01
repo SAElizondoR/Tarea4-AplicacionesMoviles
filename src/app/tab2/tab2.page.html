@@ -14,5 +14,13 @@
 
 <ion-content [fullscreen]="true">
   
-  
+  <div id="info_tarjeta" class="card align-self-center"
+    style="width: 18rem; margin: 0 auto;">
+    <img id="imagen_personaje" [src]="citaPersonaje.image" class="card-img-top"
+      alt="Personaje de los Simpson" width="250px" height="400px">
+    <div class="card-body">
+      <span id="nombre_personaje" class="badge bg-primary card-title">{{citaPersonaje.character}}</span>
+      <p id="cita_personaje" class="card-text">"{{citaPersonaje.quote}}"</p>
+    </div>
+  </div>
 </ion-content>
