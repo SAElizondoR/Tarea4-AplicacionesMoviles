@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Cita } from './../modelos/cita';
+import { Cita } from '../modelos/cita';
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -8,22 +9,22 @@ import { Cita } from './../modelos/cita';
 export class Tab2Page {
 
   constructor() {}
-    direccion: string = 'https://thesimpsonsquoteapi.glitch.me/quotes';
-    citaPersonaje:Cita={} as Cita;
-
-
-
+  direccion: string = 'https://thesimpsonsquoteapi.glitch.me/quotes';
+  listaCitas: Cita[] = [];
 
   ngOnInit(): void {
-    this.obtenerUnaCita();
-
+    this.obtenerMultiplesCitas('5');
   }
-  
-  async obtenerUnaCita(): Promise<void> {
-    const respuesta: Response = await fetch(this.direccion, {
+
+  async obtenerMultiplesCitas(numero: string): Promise<void> {
+    const respuesta: Response = await fetch(`${this.direccion}?count=${numero}`, {
       'method': 'GET'
     });
-    const datos: Cita[] = await respuesta.json();
-    this.citaPersonaje = datos[0];
+    this.listaCitas = await respuesta.json();
   }
 }
+
+
+
+
+

@@ -7,20 +7,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <ion-toolbar>
     <ion-title>
-      Personaje
+      Citas de Personajes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  <div id="info_tarjeta" class="card align-self-center"
-    style="width: 18rem; margin: 0 auto;">
-    <img id="imagen_personaje" [src]="citaPersonaje.image" class="card-img-top"
-      alt="Personaje de los Simpson" width="250px" height="400px">
-    <div class="card-body">
-      <span id="nombre_personaje" class="badge bg-primary card-title">{{citaPersonaje.character}}</span>
-      <p id="cita_personaje" class="card-text">"{{citaPersonaje.quote}}"</p>
-    </div>
-  </div>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Personaje</th>
+      <th scope="col">Cita</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of listaCitas; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td><img [src]=cita.image height="100px" weight="auto" ></td>
+        <td>"{{cita.quote}}"</td>
+      </tr>
+    </tbody>
+  </table>
 </ion-content>
+
