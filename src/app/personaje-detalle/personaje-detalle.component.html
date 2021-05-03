@@ -13,17 +13,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<!-- class="table table-striped table-hover" -->
-  <ion-grid>
-    <ion-row>
-      <ion-col>#</ion-col>
-      <ion-col>Personaje</ion-col>
-      <ion-col>Cita</ion-col>
-    </ion-row>
-    <ion-row *ngFor="let cita of listaCitas; let i = index">
-      <ion-col scope="row">{{i + 1}}</ion-col>
-      <ion-col><ion-img [src]=cita.image height="100px" weight="auto"></ion-img></ion-col>
-      <ion-col>"{{cita.quote}}"</ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+  <ion-card class="ion-align-self-center" style="width: 18rem; margin: 0 auto;">
+    <ion-img [src]="citaActual.image" alt="Personaje de los Simpson" width="250px" height="400px"></ion-img>
+    <ion-card-content>
+      <ion-card-title>
+        <ion-badge color="primary">{{citaActual.character}}</ion-badge>
+      </ion-card-title>
+      {{citaActual.quote}}
+    </ion-card-content>
+  </ion-card>
