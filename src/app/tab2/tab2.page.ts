@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cita } from '../modelos/cita';
 
 @Component({
@@ -6,11 +6,11 @@ import { Cita } from '../modelos/cita';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
-  constructor() {}
-  direccion: string = 'https://thesimpsonsquoteapi.glitch.me/quotes';
+  direccion = 'https://thesimpsonsquoteapi.glitch.me/quotes';
   listaCitas: Cita[] = [];
+  constructor() {}
 
   ngOnInit(): void {
     this.obtenerMultiplesCitas('5');
@@ -18,7 +18,7 @@ export class Tab2Page {
 
   async obtenerMultiplesCitas(numero: string): Promise<void> {
     const respuesta: Response = await fetch(`${this.direccion}?count=${numero}`, {
-      'method': 'GET'
+      method: 'GET'
     });
     this.listaCitas = await respuesta.json();
   }
