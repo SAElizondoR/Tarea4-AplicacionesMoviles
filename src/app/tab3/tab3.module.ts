@@ -1,3 +1,4 @@
+import { PersonajeDetalleComponent } from './../personaje-detalle/personaje-detalle.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,6 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
   ],
-  declarations: [Tab3Page]
+  declarations: [Tab3Page, PersonajeDetalleComponent]
 })
 export class Tab3PageModule {}

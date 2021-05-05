@@ -13,12 +13,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <ion-grid class="table table-striped table-hover">
+<!-- class="table table-striped table-hover" -->
+  <ion-grid>
     <ion-row>
-      <ion-col scope="col">#</ion-col>
-      <ion-col scope="col">Personaje</ion-col>
-      <ion-col scope="col">Cita</ion-col>
+      <ion-col>#</ion-col>
+      <ion-col>Personaje</ion-col>
+      <ion-col>Cita</ion-col>
     </ion-row>
     <ion-row *ngFor="let cita of listaCitas; let i = index">
       <ion-col scope="row">{{i + 1}}</ion-col>

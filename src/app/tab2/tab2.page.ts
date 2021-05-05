@@ -1,3 +1,4 @@
+import { CitasService } from '../servicios/citas.service';
 import { Component, OnInit } from '@angular/core';
 import { Cita } from '../modelos/cita';
 
@@ -8,18 +9,11 @@ import { Cita } from '../modelos/cita';
 })
 export class Tab2Page implements OnInit {
 
-  direccion = 'https://thesimpsonsquoteapi.glitch.me/quotes';
   listaCitas: Cita[] = [];
-  constructor() {}
+  constructor(private servicioCitas: CitasService) {}
 
-  ngOnInit(): void {
-    this.obtenerMultiplesCitas('5');
+  async ngOnInit(): Promise<void> {
+    this.listaCitas = await this.servicioCitas.obtenerMultiplesCitas('5');
   }
 
-  async obtenerMultiplesCitas(numero: string): Promise<void> {
-    const respuesta: Response = await fetch(`${this.direccion}?count=${numero}`, {
-      method: 'GET'
-    });
-    this.listaCitas = await respuesta.json();
-  }
 }
