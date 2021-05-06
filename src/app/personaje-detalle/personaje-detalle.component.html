@@ -11,7 +11,6 @@
     </ion-title>
   </ion-toolbar>
 </ion-header> -->
-<ion-content [fullscreen]="true">
   <ion-spinner *ngIf="!cita"></ion-spinner>
   <ion-card *ngIf="cita" style="width: 18rem; margin: 0 auto;">
     <ion-img [src]="cita.image" alt="Personaje de Los Simpson" width="250px" height="400px"></ion-img>
@@ -22,4 +21,3 @@
       {{cita.quote}}
     </ion-card-content>
   </ion-card>
-</ion-content>
