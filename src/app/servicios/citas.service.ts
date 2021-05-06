@@ -9,8 +9,8 @@ export class CitasService {
 
   constructor() { }
 
-  async obtenerUnaCita(): Promise<Cita> {
-    const respuesta: Response = await fetch(environment.direccionSimpsons, {
+  async obtenerUnaCita(): Promise<Cita[]> {
+    const respuesta: Response = await fetch(`${environment.direccionSimpsons}`, {
       method: 'GET'
     });
     return respuesta.json();

@@ -1,24 +1,25 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <ion-toolbar>
     <ion-title>
       Citas de Personajes
     </ion-title>
   </ion-toolbar>
-</ion-header>
-
+</ion-header> -->
 <ion-content [fullscreen]="true">
-  <ion-card class="ion-align-self-center" style="width: 18rem; margin: 0 auto;">
-    <ion-img [src]="citaActual.image" alt="Personaje de los Simpson" width="250px" height="400px"></ion-img>
+  <ion-spinner *ngIf="!cita"></ion-spinner>
+  <ion-card *ngIf="cita" style="width: 18rem; margin: 0 auto;">
+    <ion-img [src]="cita.image" alt="Personaje de Los Simpson" width="250px" height="400px"></ion-img>
     <ion-card-content>
       <ion-card-title>
-        <ion-badge color="primary">{{citaActual.character}}</ion-badge>
+        <ion-badge color="primary">{{cita.character}}</ion-badge>
       </ion-card-title>
-      {{citaActual.quote}}
+      {{cita.quote}}
     </ion-card-content>
   </ion-card>
+</ion-content>
