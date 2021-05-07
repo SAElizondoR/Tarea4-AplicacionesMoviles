@@ -1,8 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Los Simpson
-    </ion-title>
+    <ion-img style="display: block; margin: 0 auto"
+    [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Logo_The_Simpsons.svg/1200px-Logo_The_Simpsons.svg.png'"></ion-img>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +20,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button color="primary" class="ion-text-center" (click)="irAEnlace('/tabs/tab3')">
+        <ion-button color="secondary" class="ion-text-center" (click)="irAEnlace('/tabs/tab3')">
           Mostrar un personaje
         </ion-button>
       </ion-col>

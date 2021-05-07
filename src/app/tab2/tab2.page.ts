@@ -22,6 +22,10 @@ export class Tab2Page implements OnInit {
     this.listaCitas = await this.servicioCitas.obtenerMultiplesCitas('5');
   }
 
+  ionViewWillEnter(){
+    this.modoTabla = true;
+  }
+
   irAEnlace(ruta: string) {
     this.enrutador.navigateByUrl(ruta);
   }

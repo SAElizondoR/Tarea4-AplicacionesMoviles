@@ -22,11 +22,11 @@
     </ion-row>
     <ion-row *ngFor="let cita of listaCitas; let i = index" (click)="alSeleccionarCita(cita)">
       <ion-col scope="row">{{i + 1}}</ion-col>
-      <ion-col><ion-img [src]=cita.image height="100px" weight="auto"></ion-img></ion-col>
+      <ion-col><ion-img [src]=cita.image></ion-img></ion-col>
       <ion-col>"{{cita.quote}}"</ion-col>
     </ion-row>
   </ion-grid>
-  <ion-list *ngIf="!modoTabla">
+  <ion-list *ngIf="!modoTabla" class="ion-text-center">
     <ion-button (click)="cambiarModo()">Mostrar tabla</ion-button>
     <app-personaje-detalle [cita]="citaActual"></app-personaje-detalle>
   </ion-list>
